@@ -1,0 +1,41 @@
+# Controller plumbing: each button must show up in COMM8 (68k pad publish,
+# bits U1 D2 L4 R8 B10 C20 A40 START80) exactly where the game expects it.
+# Guards against a wrong libretro->Genesis button map silently breaking
+# every other script.  (Sampled while the button is held.)
+run 60
+hold up
+run 3
+expect 8 1
+release up
+hold down
+run 3
+expect 8 2
+release down
+hold left
+run 3
+expect 8 4
+release left
+hold right
+run 3
+expect 8 8
+release right
+hold b
+run 3
+expect 8 16
+release b
+hold c
+run 3
+expect 8 32
+release c
+hold a
+run 3
+expect 8 64
+release a
+run 3
+expect 8 0
+hold start
+run 3
+expect 8 128
+release start
+run 3
+shot pad_done

@@ -1,0 +1,22 @@
+# Pause (Start) and abort (A) from the race must reach the results screen,
+# and a button press there must return to the course select (lives left).
+run 200
+press start 8
+run 40
+press start 8
+run 60
+waitlo 12 5 400
+run 120
+press start 8
+run 20
+expectlo 12 7
+shot paused
+press a 8
+run 20
+expectlo 12 6
+shot race_over
+run 40
+press start 8
+run 30
+expectlo 12 2
+shot back_to_cup

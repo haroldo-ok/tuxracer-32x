@@ -1,0 +1,28 @@
+run 200
+press start 8
+run 40
+press start 8
+run 60
+shot intro
+run 300
+shot race_a
+hold left
+run 120
+shot race_b
+release left
+hold right
+run 120
+shot race_c
+release right
+hold down
+run 90
+shot race_brake
+release down
+run 400
+shot race_d
+hold up
+run 200
+shot race_e
+release up
+run 600
+shot race_f

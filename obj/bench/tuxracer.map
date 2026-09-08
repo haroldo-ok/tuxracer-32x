@@ -1,0 +1,361 @@
+Archive member included to satisfy reference by file (symbol)
+
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt.o)
+                              obj/bench/core/scene.o (__ashiftrt_r4_6)
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt_n.o)
+                              obj/bench/core/course.o (__ashrsi3)
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftlt.o)
+                              obj/bench/core/fixed.o (__ashlsi3_r0)
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_lshiftrt.o)
+                              obj/bench/platform/32x/main.o (__lshrsi3_r0)
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_sdivsi3.o)
+                              obj/bench/core/game.o (__sdivsi3)
+/opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_udivsi3.o)
+                              obj/bench/platform/32x/bench.o (__udivsi3)
+
+Discarded input sections
+
+ .comment       0x0000000000000000       0x13 obj/bench/core/course.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/fixed.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/game.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/palette.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/physics.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/render.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/scene.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/tuxmodel.o
+ .comment       0x0000000000000000       0x13 obj/bench/core/view.o
+ .comment       0x0000000000000000       0x13 obj/bench/gen/tables.o
+ .comment       0x0000000000000000       0x13 obj/bench/gen/courses.o
+ .comment       0x0000000000000000       0x13 obj/bench/gen/tuxmodel.o
+ .comment       0x0000000000000000       0x13 obj/bench/gen/sounds.o
+ .comment       0x0000000000000000       0x13 obj/bench/platform/32x/main.o
+ .comment       0x0000000000000000       0x13 obj/bench/platform/32x/sound.o
+ .comment       0x0000000000000000       0x13 obj/bench/platform/32x/bench.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x0000000002000000 0x0000000000400000 xr
+ram              0x0000000006000000 0x000000000003f000 axw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                __DYNAMIC = 0x0
+                [!provide]                        PROVIDE (__stack = 0x603f000)
+
+.text           0x0000000002000000    0xd8140 load address 0x0000000000000000
+                0x0000000002000000                __text_start = .
+ *crt0.o(.text)
+ .text          0x0000000002000000      0xc60 obj/bench/crt0.o
+                0x0000000002000000                start
+                0x00000000020009c0                pri_start
+                0x0000000002000a10                sec_start
+                0x0000000002000a60                pri_vbr
+                0x0000000002000b60                sec_vbr
+ *(.text)
+ .text          0x0000000002000c60      0x2e8 obj/bench/raster.o
+                0x0000000002000c60                raster_flush_asm
+ .text          0x0000000002000f48      0x904 obj/bench/core/course.o
+                0x0000000002000f48                course_load
+                0x00000000020010e4                course_elev
+                0x000000000200111c                course_terrain_at
+                0x0000000002001154                course_normal
+                0x00000000020011c8                course_barycentric
+                0x000000000200144c                course_find_y
+                0x00000000020014c0                course_find_normal
+                0x0000000002001760                course_surface_weights
+ .text          0x000000000200184c     0x1120 obj/bench/core/fixed.o
+                0x000000000200184c                fx_sin_deg
+                0x0000000002001894                fx_cos_deg
+                0x00000000020018e4                fx_isqrt32
+                0x0000000002001914                fx_sqrt
+                0x00000000020019d4                fx_asin_deg
+                0x0000000002001ab8                fx_acos_deg
+                0x0000000002001ad4                fx_rsqrt
+                0x0000000002001b98                fx_one_minus_exp_neg
+                0x0000000002001bf0                v3_length
+                0x0000000002001c9c                v3_normalize
+                0x0000000002001d4c                m34_identity
+                0x0000000002001d70                m34_rot_x
+                0x0000000002001e10                m34_rot_y
+                0x0000000002001eb0                m34_rot_z
+                0x0000000002001f50                m34_rot_axis
+                0x00000000020020a4                m34_scale
+                0x00000000020020c0                m34_translate
+                0x00000000020020e4                m34_mul
+                0x00000000020021c8                m34_mul_safe
+                0x0000000002002214                m34_apply
+                0x00000000020022a8                m34_apply_vec
+                0x0000000002002334                m34_apply_vec_t
+                0x00000000020023c0                q_from_mat
+                0x0000000002002580                q_to_mat
+                0x0000000002002640                q_nlerp
+                0x0000000002002744                q_conj
+                0x000000000200275c                q_rotate
+                0x0000000002002824                q_from_vectors
+ .text          0x000000000200296c     0x16c0 obj/bench/core/game.o
+                0x0000000002003070                game_init
+                0x00000000020030bc                game_update
+                0x0000000002003760                game_render
+ .text          0x000000000200402c      0x624 obj/bench/core/palette.o
+                0x000000000200402c                palette_build
+ .text          0x0000000002004650     0x2364 obj/bench/core/physics.o
+                0x0000000002005084                player_speed
+                0x0000000002005094                player_set_pos
+                0x00000000020050fc                physics_init
+                0x00000000020051f4                racing_update
+ .text          0x00000000020069b4     0x14b0 obj/bench/core/render.o
+                0x00000000020069b4                render_init
+                0x00000000020069d4                render_set_camera
+                0x0000000002006ae4                render_begin_frame
+                0x0000000002006af4                render_project
+                0x0000000002006b6c                render_push_tri
+                0x0000000002006d60                render_tri_cam
+                0x000000000200725c                render_tri_world
+                0x000000000200731c                draw_hline
+                0x00000000020073ec                fill_rect
+                0x00000000020075b4                raster_tri_c
+                0x0000000002007720                fill_tri_s
+                0x00000000020079d8                fill_tri
+                0x0000000002007a78                render_flush
+                0x0000000002007bbc                render_draw_sorted
+                0x0000000002007bd0                text_width
+                0x0000000002007bf4                draw_text
+                0x0000000002007d1c                draw_text_big
+                0x0000000002007e10                draw_number
+ .text          0x0000000002007e64     0x27b0 obj/bench/core/scene.o
+                0x0000000002008604                scene_draw_sky
+                0x0000000002008660                scene_bench_fill_row
+                0x00000000020086c8                scene_draw_terrain
+                0x0000000002008d50                scene_draw_objects
+                0x000000000200a100                scene_draw_tux
+ .text          0x000000000200a614      0x490 obj/bench/core/tuxmodel.o
+                0x000000000200a6b8                tux_pose_reset
+                0x000000000200a6e8                tux_pose_racing
+                0x000000000200a990                tux_pose_keyframe
+                0x000000000200aa34                tux_eval_frames
+ .text          0x000000000200aaa4      0x908 obj/bench/core/view.o
+                0x000000000200aaa4                view_update
+ .text          0x000000000200b3ac        0x0 obj/bench/gen/tables.o
+ .text          0x000000000200b3ac        0x0 obj/bench/gen/courses.o
+ .text          0x000000000200b3ac        0x0 obj/bench/gen/tuxmodel.o
+ .text          0x000000000200b3ac        0x0 obj/bench/gen/sounds.o
+ .text          0x000000000200b3ac        0x0 obj/bench/platform/32x/main.o
+ .text          0x000000000200b3ac      0x2e0 obj/bench/platform/32x/sound.o
+                0x000000000200b3ac                slave_main
+ .text          0x000000000200b68c      0x750 obj/bench/platform/32x/bench.o
+                0x000000000200b68c                run_bench
+ .text          0x000000000200bddc       0x52 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt.o)
+                0x000000000200bddc                __ashiftrt_r4_31
+                0x000000000200bddc                __ashiftrt_r4_32
+                0x000000000200bde2                __ashiftrt_r4_30
+                0x000000000200bde4                __ashiftrt_r4_29
+                0x000000000200bde6                __ashiftrt_r4_28
+                0x000000000200bde8                __ashiftrt_r4_27
+                0x000000000200bdea                __ashiftrt_r4_26
+                0x000000000200bdec                __ashiftrt_r4_25
+                0x000000000200bdee                __ashiftrt_r4_24
+                0x000000000200bdf6                __ashiftrt_r4_23
+                0x000000000200bdf8                __ashiftrt_r4_22
+                0x000000000200bdfa                __ashiftrt_r4_21
+                0x000000000200bdfc                __ashiftrt_r4_20
+                0x000000000200bdfe                __ashiftrt_r4_19
+                0x000000000200be00                __ashiftrt_r4_18
+                0x000000000200be02                __ashiftrt_r4_17
+                0x000000000200be04                __ashiftrt_r4_16
+                0x000000000200be0a                __ashiftrt_r4_15
+                0x000000000200be0c                __ashiftrt_r4_14
+                0x000000000200be0e                __ashiftrt_r4_13
+                0x000000000200be10                __ashiftrt_r4_12
+                0x000000000200be12                __ashiftrt_r4_11
+                0x000000000200be14                __ashiftrt_r4_10
+                0x000000000200be16                __ashiftrt_r4_9
+                0x000000000200be18                __ashiftrt_r4_8
+                0x000000000200be1a                __ashiftrt_r4_7
+                0x000000000200be1c                __ashiftrt_r4_6
+                0x000000000200be1e                __ashiftrt_r4_5
+                0x000000000200be20                __ashiftrt_r4_4
+                0x000000000200be22                __ashiftrt_r4_3
+                0x000000000200be24                __ashiftrt_r4_2
+                0x000000000200be26                __ashiftrt_r4_1
+                0x000000000200be2a                __ashiftrt_r4_0
+ *fill*         0x000000000200be2e        0x2 
+ .text          0x000000000200be30       0x80 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt_n.o)
+                0x000000000200be30                __ashrsi3
+ .text          0x000000000200beb0       0xbc /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftlt.o)
+                0x000000000200beb0                __ashlsi3
+                0x000000000200beb4                __ashlsi3_r0
+ .text          0x000000000200bf6c       0xbc /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_lshiftrt.o)
+                0x000000000200bf6c                __lshrsi3
+                0x000000000200bf70                __lshrsi3_r0
+ .text          0x000000000200c028       0xa0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_sdivsi3.o)
+                0x000000000200c028                __sdivsi3
+ .text          0x000000000200c0c8       0x6c /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_udivsi3.o)
+                0x000000000200c0ea                __udivsi3
+ *(.text.*)
+ .text.startup  0x000000000200c134      0x20c obj/bench/platform/32x/main.o
+                0x000000000200c134                main
+ *(.gnu.linkonce.t.*)
+                0x000000000200c340                . = ALIGN (0x10)
+ *(.rdata)
+ *(.rodata)
+ .rodata        0x000000000200c340      0x184 obj/bench/core/game.o
+ .rodata        0x000000000200c4c4        0xc obj/bench/core/palette.o
+                0x000000000200c4c4                g_light_dir
+ .rodata        0x000000000200c4d0       0x74 obj/bench/core/physics.o
+ .rodata        0x000000000200c544      0x300 obj/bench/core/render.o
+ .rodata        0x000000000200c844       0x70 obj/bench/core/scene.o
+ .rodata        0x000000000200c8b4       0x18 obj/bench/core/view.o
+ .rodata        0x000000000200c8cc     0xa508 obj/bench/gen/tables.o
+                0x000000000200c8cc                nml_y_tab
+                0x000000000200cac8                proj_tab
+                0x0000000002010ac8                recip30_tab
+                0x0000000002011ac8                fx_expneg_tab
+                0x0000000002011ccc                fx_sqrt_tab256
+                0x00000000020120cc                fx_rsqrt_tab256
+                0x00000000020124cc                fx_rsqrt_tab
+                0x00000000020125cc                drag_force_tab
+                0x00000000020129d0                fx_asintab
+                0x0000000002012dd4                fx_sintab
+ .rodata        0x0000000002016dd4    0xb29a0 obj/bench/gen/courses.o
+                0x0000000002016dd4                num_course_defs
+                0x0000000002016dd8                course_defs
+ .rodata        0x00000000020c9774     0x30f8 obj/bench/gen/tuxmodel.o
+                0x00000000020c9774                tux_mesh_lod1
+                0x00000000020ca5a4                tux_mesh_lod0
+                0x00000000020cc5f8                tux_num_frames
+                0x00000000020cc5fc                tux_frame_defs
+ .rodata        0x00000000020cc86c     0xb67b obj/bench/gen/sounds.o
+                0x00000000020cc86c                num_sound_defs
+                0x00000000020cc870                sound_defs
+ *(.rodata.*)
+ *fill*         0x00000000020d7ee7        0x1 
+ .rodata.str1.4
+                0x00000000020d7ee8      0x207 obj/bench/core/game.o
+                                        0x20b (size before relaxing)
+ *fill*         0x00000000020d80ef        0x1 
+ .rodata.str1.4
+                0x00000000020d80f0       0x48 obj/bench/gen/courses.o
+ *(.gnu.linkonce.r.*)
+                0x00000000020d8140                . = ALIGN (0x10)
+ *fill*         0x00000000020d8138        0x8 
+                0x00000000020d8140                __text_end = .
+                0x00000000000d8140                __text_size = (__text_end - __text_start)
+
+.rela.dyn       0x00000000020d8140        0x0 load address 0x00000000000d8140
+ .rela.text     0x00000000020d8140        0x0 obj/bench/crt0.o
+
+.data           0x0000000006000000       0x10 load address 0x00000000000d8140
+                0x0000000006000000                __data_start = .
+ *(.data)
+ .data          0x0000000006000000        0x0 obj/bench/crt0.o
+ .data          0x0000000006000000        0x0 obj/bench/raster.o
+ .data          0x0000000006000000        0x0 obj/bench/core/course.o
+ .data          0x0000000006000000        0x0 obj/bench/core/fixed.o
+ .data          0x0000000006000000        0x0 obj/bench/core/game.o
+ .data          0x0000000006000000        0x0 obj/bench/core/palette.o
+ .data          0x0000000006000000        0x0 obj/bench/core/physics.o
+ .data          0x0000000006000000        0x0 obj/bench/core/render.o
+ .data          0x0000000006000000        0x4 obj/bench/core/scene.o
+                0x0000000006000000                g_scene_tri_budget
+ .data          0x0000000006000004        0x0 obj/bench/core/tuxmodel.o
+ .data          0x0000000006000004        0x0 obj/bench/core/view.o
+ .data          0x0000000006000004        0x0 obj/bench/gen/tables.o
+ .data          0x0000000006000004        0x0 obj/bench/gen/courses.o
+ .data          0x0000000006000004        0x0 obj/bench/gen/tuxmodel.o
+ .data          0x0000000006000004        0x0 obj/bench/gen/sounds.o
+ .data          0x0000000006000004        0x0 obj/bench/platform/32x/main.o
+ .data          0x0000000006000004        0x0 obj/bench/platform/32x/sound.o
+ .data          0x0000000006000004        0x0 obj/bench/platform/32x/bench.o
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt.o)
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt_n.o)
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftlt.o)
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_lshiftrt.o)
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_sdivsi3.o)
+ .data          0x0000000006000004        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_udivsi3.o)
+ *(.data.*)
+ *(.gnu.linkonce.d.*)
+ *(.sdata)
+ *(.sdata.*)
+                0x0000000006000010                . = ALIGN (0x10)
+ *fill*         0x0000000006000004        0xc 
+                0x0000000006000010                __data_end = .
+                0x0000000000000010                __data_size = (__data_end - __data_start)
+
+.bss            0x0000000006000010    0x1c090 load address 0x00000000000d8150
+                0x0000000006000010                __bss_start = .
+ *(.bss)
+ .bss           0x0000000006000010        0x0 obj/bench/crt0.o
+ .bss           0x0000000006000010        0x0 obj/bench/raster.o
+ .bss           0x0000000006000010      0x238 obj/bench/core/course.o
+                0x0000000006000010                g_course
+ .bss           0x0000000006000248        0x0 obj/bench/core/fixed.o
+ .bss           0x0000000006000248      0x2b8 obj/bench/core/game.o
+                0x0000000006000248                g_frame_counter
+                0x000000000600024c                g_gm
+ .bss           0x0000000006000500        0x0 obj/bench/core/palette.o
+ .bss           0x0000000006000500      0x104 obj/bench/core/physics.o
+                0x0000000006000500                g_herring_pickup_event
+                0x0000000006000504                g_game
+                0x0000000006000514                g_player
+ .bss           0x0000000006000604      0x264 obj/bench/core/render.o
+                0x0000000006000604                g_rs
+                0x0000000006000608                g_cam
+ .bss           0x0000000006000868     0x2434 obj/bench/core/scene.o
+                0x0000000006000868                g_scene_lod
+ .bss           0x0000000006002c9c        0x0 obj/bench/core/tuxmodel.o
+ .bss           0x0000000006002c9c        0x0 obj/bench/core/view.o
+ .bss           0x0000000006002c9c        0x0 obj/bench/gen/tables.o
+ .bss           0x0000000006002c9c        0x0 obj/bench/gen/courses.o
+ .bss           0x0000000006002c9c        0x0 obj/bench/gen/tuxmodel.o
+ .bss           0x0000000006002c9c        0x0 obj/bench/gen/sounds.o
+ .bss           0x0000000006002c9c     0x773c obj/bench/platform/32x/main.o
+                0x0000000006002c9c                g_prof_skip
+ .bss           0x000000000600a3d8        0x0 obj/bench/platform/32x/sound.o
+ .bss           0x000000000600a3d8    0x11cc4 obj/bench/platform/32x/bench.o
+                0x000000000600a3d8                sink
+                0x000000000600a3dc                g_bench
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt.o)
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftrt_n.o)
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_ashiftlt.o)
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_lshiftrt.o)
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_sdivsi3.o)
+ .bss           0x000000000601c09c        0x0 /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a(_udivsi3.o)
+ *(.bss.*)
+ *(.gnu.linkonce.b.*)
+ *(.sbss)
+ *(.sbss.*)
+ *(.scommon)
+ *(COMMON)
+                0x000000000601c0a0                . = ALIGN (0x10)
+ *fill*         0x000000000601c09c        0x4 
+                0x000000000601c0a0                __bss_end = .
+                0x000000000601c0a0                _end = .
+                0x000000000001c090                __bss_size = (__bss_end - __bss_start)
+
+/DISCARD/
+ *(.comment)
+ *(.debug*)
+ *(.eh_frame)
+ *(.eh_frame_hdr)
+LOAD obj/bench/crt0.o
+LOAD obj/bench/raster.o
+LOAD obj/bench/core/course.o
+LOAD obj/bench/core/fixed.o
+LOAD obj/bench/core/game.o
+LOAD obj/bench/core/palette.o
+LOAD obj/bench/core/physics.o
+LOAD obj/bench/core/render.o
+LOAD obj/bench/core/scene.o
+LOAD obj/bench/core/tuxmodel.o
+LOAD obj/bench/core/view.o
+LOAD obj/bench/gen/tables.o
+LOAD obj/bench/gen/courses.o
+LOAD obj/bench/gen/tuxmodel.o
+LOAD obj/bench/gen/sounds.o
+LOAD obj/bench/platform/32x/main.o
+LOAD obj/bench/platform/32x/sound.o
+LOAD obj/bench/platform/32x/bench.o
+LOAD /opt/toolchains/sega/sh-elf/lib/gcc/sh-elf/12.1.0/libgcc.a
+OUTPUT(obj/bench/tuxracer.elf elf32-sh)

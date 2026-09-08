@@ -1,0 +1,14 @@
+# Title menu -> Canadian Cup (course fixed to race 1) and back via Practice,
+# where the course list can be browsed.  Course index = high byte of COMM12.
+run 200
+expectlo 12 1
+shot title
+press start 8
+run 40
+expect 12 2
+shot cup_bunny
+# in the cup the course is fixed (cup_race); down must NOT change it
+press down 8
+run 20
+expect 12 2
+# difficulty row: title menu item 2 (Right cycles Easy/Normal/Hard/Insane)

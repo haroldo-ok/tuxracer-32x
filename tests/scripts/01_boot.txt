@@ -1,0 +1,14 @@
+# Boot guard: the SH2 C code must come up, own the video and reach the title.
+# COMM0: 0x5458 'TX' = main() reached, 0x474F 'GO' = video + palette up.
+# COMM12 low byte = game mode (0 splash, 1 title, 2 course select, 4 intro,
+# 5 racing, 6 game over, 7 paused).  COMM2 = game tick heartbeat.
+run 30
+expect 0 18255
+expectlo 12 0
+shot splash
+expectne 2 0
+run 170
+expectlo 12 1
+shot title
+run 60
+shot title_b

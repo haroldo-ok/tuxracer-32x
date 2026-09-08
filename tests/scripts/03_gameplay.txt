@@ -1,0 +1,27 @@
+# Title -> cup -> intro -> race.  Tux must move (speed telemetry in COMM14,
+# 8.8 m/s) and the scene must keep changing while steering.
+run 200
+press start 8
+run 40
+press start 8
+run 60
+expectlo 12 4
+shot intro
+waitlo 12 5 400
+run 240
+expectlo 12 5
+expectne 14 0
+shot race_a
+hold left
+run 120
+shot race_b
+release left
+hold right
+run 120
+shot race_c
+release right
+hold down
+run 90
+shot race_brake
+release down
+expectlo 12 5

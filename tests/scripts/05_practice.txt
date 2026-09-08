@@ -1,0 +1,23 @@
+# Practice mode: pick a different course (Frozen River) and race on it.
+run 200
+press down 8
+run 10
+press start 8
+run 40
+expectlo 12 2
+press down 8
+run 4
+press down 8
+run 4
+press down 8
+run 10
+# course index 3 = Frozen River -> COMM12 = 0x0302
+expect 12 770
+shot practice_list
+press start 8
+run 60
+expectlo 12 4
+waitlo 12 5 400
+run 300
+expectlo 12 5
+shot frozen_river

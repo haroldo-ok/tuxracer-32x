@@ -1,0 +1,26 @@
+run 200
+press start 8
+run 40
+press start 8
+run 60
+waitlo 12 5 8000
+run 30
+shot p0
+run 90
+shot p1
+hold left
+run 90
+shot p2
+release left
+run 90
+shot p3
+hold right
+run 90
+shot p4
+release right
+run 90
+shot p5
+run 90
+shot p6
+run 90
+shot p7
